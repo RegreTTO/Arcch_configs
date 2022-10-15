@@ -1,0 +1,36 @@
+:set number
+:set relativenumber
+
+:set autoindent
+:set smarttab
+
+:set tabstop=4
+:set softtabstop=4
+:set shiftwidth=4
+:set mouse=a
+:set wrap linebreak
+
+syntax on
+set encoding=utf-8
+
+call plug#begin("~/.config/nvim/plugged")
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'joshdick/onedark.vim'
+Plug 'machakann/vim-highlightedyank'
+Plug 'jackguo380/vim-lsp-cxx-highlight'
+Plug 'vim-scripts/TagHighlight'
+Plug 'ervandew/supertab'
+Plug 'sheerun/vim-polyglot'
+Plug 'ryanoasis/vim-devicons'
+Plug 'KarimElghamry/vim-auto-comment'
+call plug#end()
+
+colorscheme onedark
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = "minimalist"
+
+let g:lsp_cxx_hl_use_text_props=1
+

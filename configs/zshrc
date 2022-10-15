@@ -1,0 +1,47 @@
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# Custom theme
+ZSH_THEME="bira" # set by `omz`
+
+plugins=(
+    git
+    virtualenv
+    zsh-interactive-cd
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# User functions
+getdirs(){
+	find $1 -type d | grep -v '/\.' 
+}
+
+open(){
+	dolphin $1 &>/dev/null & 
+}
+
+declare -f getdirs > /dev/null
+declare -f open > /dev/null
+# Binds
+
+bindkey '^H' backward-kill-word
+
+# Aliases
+alias vim=nvim
+alias rm="rm -I"
+alias shutdown="shutdown 0"
+alias speedtest="speedtest --bytes"
+alias gdb="gdb -q"
+alias g++="g++ -g"
+alias jobs="jobs -p"
+alias update="sudo pacman -Syu"
+alias du="du -h"
+alias pdb="python -m pdb"
+alias p3='bpython'
+alias cat='bat -p'
+alias pacman='sudo pacman'
+
+# THERE MUST BE CONDA INIT
